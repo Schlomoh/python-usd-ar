@@ -9,5 +9,8 @@
 FROM plattar/python-usd-ar:version-22.05b-slim-bullseye
 
 COPY main.py /usr/src/app/main.py
+COPY requirements.txt /usr/src/app/requirements.txt
+
+RUN pip install -r requirements.txt
 
 CMD python main.py
