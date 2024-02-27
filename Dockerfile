@@ -8,4 +8,6 @@
 # For more info on usdconvert, visit https://developer.apple.com/augmented-reality/tools/
 FROM plattar/python-usd-ar:version-22.05b-slim-bullseye
 
-CMD bash
+COPY /usr/src/app/main.py main.py
+
+CMD python main.py
