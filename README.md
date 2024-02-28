@@ -1,3 +1,25 @@
+
+Contains a small flask web server written in python to act as a converion service using the packaged converter tools.
+
+Reads in binary data from requests sent to `<host>:<port=8080>/`. The binary data has to be a glb file as binary base64 encoded string. The string has to be sent in a `data` field in the json body of the request. 
+
+```json
+{
+    data: 'thedatastringinbinary...'
+}
+```
+
+The request also has to announce the size of the binary file data as a query paramerter called `filesize`. Set the filesize param to the byte size of the file. Any size bigger than 50MB in bytes (52428800) will be rejected.
+
+Like this:
+
+```js
+    const searchparams = {
+        filesize: 1234567
+    }
+```
+
+
 [![Twitter: @plattarglobal](https://img.shields.io/badge/contact-@plattarglobal-blue.svg?style=flat)](https://twitter.com/plattarglobal)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](LICENSE)
 
